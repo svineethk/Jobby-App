@@ -1,0 +1,52 @@
+.specific-job-view-container {
+  min-height: 90vh;
+  height: auto;
+  width: 70vw;
+  background-color: #202020;
+  margin-top: 40px;
+  border-radius: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 32px;
+  font-family: Roboto;
+  color: #ffffff;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.visit-link {
+  text-decoration: none;
+}
+
+.visit-icon {
+  margin-left: 10px;
+}
+
+.skills-containers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skills-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 90px;
+  width: 350px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.skills-image {
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+}

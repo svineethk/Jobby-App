@@ -1,0 +1,37 @@
+.header-container {
+  height: 85px;
+  width: 100vw;
+  background-color: #202020;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.website-logo {
+  height: 100px;
+  width: 100px;
+}
+
+.link-path {
+  height: 40px;
+  width: 90px;
+  margin-right: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logout-button {
+  height: 40px;
+  width: 120px;
+  background-color: #6366f1;
+  border-color: transparent;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: bold;
+  border-radius: 10px;
+}
