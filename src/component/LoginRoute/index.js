@@ -27,7 +27,7 @@ class LoginRoute extends Component {
   }
 
   onShowSubmitFailure = errorMsg => {
-    console.log(errorMsg)
+    this.setState({showSubmitFailure: true, showSubmitError: errorMsg})
   }
 
   onFormSubmitted = async event => {
@@ -88,11 +88,15 @@ class LoginRoute extends Component {
               placeholder="Password"
               onChange={this.onChangePassword}
             />
-            {showSubmitFailure && <p>{showSubmitError}</p>}
             <button type="submit" className="logIn-button">
               Login
             </button>
           </form>
+          <div className="error-text-container">
+            {showSubmitFailure && (
+              <p className="submit-text">{showSubmitError}</p>
+            )}
+          </div>
         </div>
       </div>
     )

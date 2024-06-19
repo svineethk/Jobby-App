@@ -37,7 +37,10 @@ class JobsProfileSection extends Component {
     this.setState({isLoading: true})
     const jwtToken = Cookies.get('jwt_token')
     const {searchInput, activeEmployeementList, activeSalaryRange} = this.props
-    const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${activeEmployeementList}&minimum_package=${activeSalaryRange}&search=${searchInput}`
+    const updatedActiveEmployeementList = Array.isArray(activeEmployeementList)
+      ? activeEmployeementList.join(',')
+      : ''
+    const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${updatedActiveEmployeementList}&minimum_package=${activeSalaryRange}&search=${searchInput}`
     const options = {
       method: 'GET',
       headers: {
@@ -70,15 +73,17 @@ class JobsProfileSection extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loading-container">
-      <div className="loader-container" data-testid="loader">
-        <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-      </div>
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
   renderSuccessView = () => {
     const {jobsListData} = this.state
+
+    if (jobsListData.length === 0) {
+      return this.renderNothingFound()
+    }
 
     return (
       <div className="job-render-container">
@@ -89,7 +94,44 @@ class JobsProfileSection extends Component {
     )
   }
 
-  renderLoadingView = () => {
+  renderNothingFound = () => (
+    <div className="noJobs-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+        alt="no jobs"
+      />
+      <h1 className="error-header">No Jobs Found</h1>
+      <p className="error-paragraph">
+        We could not find any jobs. Try <br /> other filters
+      </p>
+    </div>
+  )
+
+  onClickRetryButton = () => {
+    this.setState({apiStatus: apiConstantStatus.initial}, this.getJobDetails)
+  }
+
+  renderFailureView = () => (
+    <div className="failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+      />
+      <h1 className="error-header">Oops! Something Went Wrong</h1>
+      <p className="error-paragraph">
+        We cannot seem to find the page you are looking for
+      </p>
+      <button
+        type="button"
+        className="retry-button"
+        onClick={this.onClickRetryButton}
+      >
+        Retry
+      </button>
+    </div>
+  )
+
+  renderStatusView = () => {
     const {apiStatus} = this.state
 
     switch (apiStatus) {
@@ -107,7 +149,9 @@ class JobsProfileSection extends Component {
   render() {
     const {isLoading} = this.state
     return (
-      <>{isLoading ? this.renderLoadingView() : this.renderSuccessView()}</>
+      <div>
+        {isLoading ? this.renderLoadingView() : this.renderStatusView()}
+      </div>
     )
   }
 }

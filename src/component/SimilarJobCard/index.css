@@ -1,0 +1,56 @@
+.similar-jobs-card {
+  height: auto;
+  width: 330px;
+  background-color: #202020;
+  padding: 10px;
+  margin-right: 40px;
+  border-radius: 10px;
+}
+
+.similar-top-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.similar-jobs-company-logo {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+  margin-top: 13px;
+}
+
+.similar-jobs-description {
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .similar-jobs-card {
+    height: auto;
+    width: 450px;
+    background-color: #202020;
+    padding: 10px;
+    margin-right: 2px;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    list-style-type: none;
+  }
+
+  .similar-top-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .similar-jobs-company-logo {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 13px;
+  }
+
+  .similar-jobs-description {
+    font-family: Roboto;
+    font-weight: bold;
+  }
+}

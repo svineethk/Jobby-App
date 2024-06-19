@@ -21,7 +21,11 @@ const RenderJobsDetails = props => {
     <Link to={`/jobs/${id}`} className="nav-link">
       <div className="jobs-section-container">
         <div className="jobs-title-container">
-          <img src={companyLogoUrl} alt={id} className="jobs-company-logo" />
+          <img
+            src={companyLogoUrl}
+            alt="company logo"
+            className="jobs-company-logo"
+          />
           <div>
             <h1 className="jobs-title">{title}</h1>
             <div className="jobs-rating-container">
@@ -37,7 +41,7 @@ const RenderJobsDetails = props => {
             <BsBriefcaseFill className="suitcase-icon" />
             <p>{employmentType}</p>
           </div>
-          <p>{packagePerAnnum}</p>
+          <h1>{packagePerAnnum}</h1>
         </div>
         <hr />
         <h1>Description</h1>

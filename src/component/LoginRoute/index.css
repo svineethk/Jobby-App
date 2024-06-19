@@ -28,10 +28,11 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 230px;
   width: 70%;
   margin-top: 10px;
   padding-left: 30px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,4 +69,32 @@
   border-radius: 8px;
   border-color: transparent;
   cursor: pointer;
+}
+
+.error-text-container {
+  height: auto;
+  width: 100%;
+  padding-left: 130px;
+}
+
+.submit-text {
+  font-family: Roboto;
+  text-align: left;
+  color: #ff0b37;
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (max-width: 576px) {
+  .login-container {
+    height: 450px;
+    width: 450px;
+    background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 10px;
+  }
 }

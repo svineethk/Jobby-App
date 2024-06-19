@@ -58,8 +58,11 @@ const JobsFiltersData = props => {
       <hr className="line" />
       <h1>Type of Employment</h1>
       {employmentTypesList.map(eachTypesList => (
-        <div className="types-list-container">
-          <li key={eachTypesList.employmentTypeId}>
+        <div
+          className="types-list-container"
+          key={eachTypesList.employmentTypeId}
+        >
+          <li>
             <input
               type="checkbox"
               id={eachTypesList.employmentTypeId}
@@ -77,8 +80,8 @@ const JobsFiltersData = props => {
       <hr className="line" />
       <h1>Salary Range</h1>
       {salaryRangesList.map(eachSalaryRange => (
-        <div>
-          <li key={eachSalaryRange.salaryRangeId}>
+        <div key={eachSalaryRange.salaryRangeId}>
+          <li>
             <input
               type="radio"
               id={eachSalaryRange.salaryRangeId}

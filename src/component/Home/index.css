@@ -37,3 +37,30 @@
   border-color: transparent;
   cursor: pointer;
 }
+
+@media (max-width: 576px) {
+  .home-container {
+    height: 200vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .home-content-container {
+    height: 200vh;
+    width: 100vw;
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+    background-size: cover;
+    padding-top: 70px;
+    padding-left: 50px;
+    font-family: Roboto;
+    color: #ffffff;
+  }
+
+  .home-paragraph {
+    font-family: Roboto;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}

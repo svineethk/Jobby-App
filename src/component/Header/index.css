@@ -34,4 +34,56 @@
   font-family: Roboto;
   font-weight: bold;
   border-radius: 10px;
+  margin-left: 850px;
+}
+
+.small-screen-container {
+  display: none;
+}
+
+.large-screen-container {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media (max-width: 576px) {
+  .large-screen-container {
+    display: none;
+  }
+
+  .small-screen-container {
+    display: block;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .website-logo {
+    height: 5px;
+    width: 5px;
+  }
+
+  .small-home-button {
+    height: 27px;
+    width: 27px;
+  }
+
+  .small-job-button {
+    height: 27px;
+    width: 27px;
+  }
+
+  .logout-button-container {
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .small-logout-button {
+    height: 27px;
+    width: 27px;
+    color: #ffffff;
+  }
 }

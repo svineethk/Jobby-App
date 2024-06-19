@@ -1,4 +1,5 @@
 import './index.css'
+import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Header from '../Header'
 
@@ -7,10 +8,6 @@ const Home = props => {
   const jwtToken = Cookies.get('jwt_token')
   if (jwtToken === undefined) {
     history.replace('/login')
-  }
-
-  const onJobPageClicked = () => {
-    history.replace('/jobs')
   }
 
   return (
@@ -25,9 +22,11 @@ const Home = props => {
           company reviews. Find the job that fits your <br /> abilities and
           potential.
         </p>
-        <button type="button" className="job-button" onClick={onJobPageClicked}>
-          Find Jobs
-        </button>
+        <Link to="/jobs" className="nav-link">
+          <button type="button" className="job-button">
+            Find Jobs
+          </button>
+        </Link>
       </div>
     </div>
   )

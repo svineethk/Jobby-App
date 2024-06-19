@@ -1,15 +1,14 @@
 import './index.css'
 
 const SkillsCard = props => {
-  const {skillDetails} = props
-  console.log(skillDetails)
-  const {name, imageUrl} = skillDetails
+  const {eachSkillsCard} = props
+  const {name, imageUrl} = eachSkillsCard
 
   return (
-    <div>
-      <img src={imageUrl} alt={name} />
-      <p>{name}</p>
-    </div>
+    <li className="each-skills-container">
+      <img src={imageUrl} alt={name} className="each-skills-image" />
+      <p className="each-skills-paragraph">{name}</p>
+    </li>
   )
 }
 
